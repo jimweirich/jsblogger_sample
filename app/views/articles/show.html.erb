@@ -1,0 +1,18 @@
+<h1><%= @article.title %></h1>
+
+<p class="flash"><%= flash[:notice] %></p>
+
+<p><%= @article.body %></p>
+
+<%= link_to "Edit", edit_article_path(@article) %>
+<%= link_to "Delete", article_path(@article), method: :delete,
+    confirm: "Do you REALLY want to delete '#{@article.title}'?" %>
+
+<h3>Comments (<%= @article.comments.count %>)</h3>
+
+<%= render partial: @article.comments %>
+
+<%= render partial: 'articles/comment_form' %>
+
+<%= link_to "Back to articles", articles_path %>
+

@@ -1,0 +1,15 @@
+<%= render partial: "shared/errors", locals: { model: article } %>
+
+<%= form_for(article) do |f| %>
+<p>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :body %><br/>
+  <%= f.text_area :body %>
+</p>
+<p>
+  <%= f.submit "Save" %>
+</p>
+<% end %>
